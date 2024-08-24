@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Hello Extensions",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "hello.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["popup.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "bg-wrapper.js"
+  },
+  "permissions": ["alarms"],
+  "action": {}
+}
